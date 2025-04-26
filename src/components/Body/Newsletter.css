@@ -1,0 +1,119 @@
+
+.newsletter-container {
+    background-color:rgba(42,47,61,255);
+    padding: 30px 0;
+    width: 100%;
+  }
+  
+  .newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-left: 6em;
+  }
+  
+  .newsletter-text h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .newsletter-text p {
+    font-size: 16px;
+    color: #a1a7bb;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+  
+  .subscription-form {
+    display: flex;
+    max-width: 560px;
+    gap: 1em
+  }
+  
+  .subscription-form input {
+    flex: 1;
+    height: 48px;
+    background-color: #323546;
+    border: none;
+    border-radius: 10px;
+    padding: 0 16px;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  
+  .subscription-form input::placeholder {
+    color: #8a8f98;
+  }
+  
+  .subscription-form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(56, 97, 251, 0.5);
+  }
+  
+  .subscription-form button {
+    height: 48px;
+    padding: 0 24px;
+    background-color: #3861fb;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .subscription-form button:hover {
+    background-color: #2d4fe3;
+  }
+  
+  .newsletter-illustration {
+    /* flex: 1; */
+    width: 550px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .newsletter-illustration img{
+   width: 100%;
+border-radius: 20px;
+  }
+  
+  @media (max-width: 992px) {
+    .newsletter-content {
+      flex-direction: column;
+    }
+    
+    .newsletter-text {
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+    
+    .newsletter-illustration {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .newsletter-text h2 {
+      font-size: 24px;
+    }
+    
+    .subscription-form {
+      flex-direction: column;
+    }
+    
+    .subscription-form input {
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    
+    .subscription-form button {
+      border-radius: 4px;
+      width: 100%;
+    }
+  }

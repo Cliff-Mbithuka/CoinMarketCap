@@ -1,0 +1,185 @@
+
+  .crypto-table-container {
+    background-color: #0a0e17;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    border-radius: 8px;
+    width: 100%;
+  }
+  
+  .table-header {
+    display: grid;
+    grid-template-columns: 180px 180px 150px 120px 170px 190px 190px 190px 200px 190px;
+    padding: 16px 10px;
+    border-bottom: 1px solid #222531;
+  }
+  
+  .header-cell {
+    text-align: right;
+    color: #a1a7bb;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+  }
+  
+  .header-cell:first-child {
+    justify-content: center;
+    padding-right: 0;
+  }
+  
+  .header-cell:nth-child(2) {
+    justify-content: flex-start;
+    padding-left: 10px;
+    padding-right: 0;
+  }
+  .header-cell:last-child {
+    text-align: right;
+    
+  }
+  
+  .info-icon {
+    color: #a1a7bb;
+    margin-left: 5px;
+    font-size: 14px;
+  }
+  
+  .crypto-row {
+    display: grid;
+    grid-template-columns: 180px 180px 150px 120px 170px 190px 190px 190px 200px 300px;
+    padding: 16px 10px;
+    border-bottom: 1px solid #151a29;
+    align-items: center;
+  }
+  
+  .crypto-row:hover {
+    background-color: #171924;
+  }
+  
+  .data-cell {
+    text-align: right;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+  }
+  
+  .id-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .name-cell {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 10px;
+  }
+  
+  .star-button {
+    background: none;
+    border: none;
+    color: #4d4f5c;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 4em;
+  }
+  
+  .crypto-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+  }
+  
+  .logo-1 { background-color: #f7931a; }
+  .logo-2 { background-color: #627eea; }
+  .logo-3 { background-color: #26a17b; }
+  .logo-4 { background-color: #23292f; }
+  .logo-5 { background-color: #f0b90b; }
+  .logo-6 { background-color: #00ffbd; }
+  .logo-7 { background-color: #2775ca; }
+  .logo-8 { background-color: #c3a634; }
+  .logo-9 { background-color: #0033ad; }
+  
+  .crypto-info {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .crypto-name {
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  
+  .crypto-symbol {
+    color: #a1a7bb;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  
+  .buy-button {
+    background-color:#0d1520;
+    color:#22256f;
+    border: 2px solid blue;
+    border-radius: 8px;
+    padding: 3px 6px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  
+  .positive-change {
+    color: #16c784;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .negative-change {
+    color: #ea3943;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .neutral-change {
+    color: #a1a7bb;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .volume-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .volume-token {
+    font-size: 12px;
+    color: #a1a7bb;
+    margin-top: 4px;
+  }
+  
+  .price-chart {
+    width: 150px;
+    height: 50px;
+  }

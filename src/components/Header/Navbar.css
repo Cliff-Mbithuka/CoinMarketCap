@@ -1,0 +1,89 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0d111c;
+    padding: 10px 20px;
+    color: white;
+    border-bottom: 1px solid gray;
+  }
+  
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .navbar__logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%
+  }
+  
+  .navbar__links {
+    display: flex;
+    margin-left: 20px;
+    gap: 20px;
+  }
+  
+  .navbar__links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar__links a:hover {
+    color: #4e9af1;
+  }
+  
+  .navbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .navbar__actions a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar__search {
+    background-color: #1c1f2b;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .navbar__login {
+    background-color: #2962ff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .navbar__menu {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 40px;
+    padding: 4px;
+  }
+  
+  .menu-icon {
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  .profile-icon {
+    font-size: 22px;
+  }
+  

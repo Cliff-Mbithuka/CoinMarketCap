@@ -1,0 +1,41 @@
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b0e16;
+    padding: 15px 20px;
+    font-size: 13px;
+    color: #a3a3a3;
+    border-bottom: 1px solid gray;
+  }
+  
+  .topbar__left {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .topbar__left b {
+    color:rgb(100, 137, 238);
+  }
+  
+  .green {
+    color: #00c853;
+    margin-left: 5px;
+  }
+  
+  .topbar__right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .topbar__button {
+    background-color: #1c1f2b;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
