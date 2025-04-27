@@ -120,8 +120,8 @@
 @media (max-width: 768px) {
   .footer-top {
     flex-direction: column;
-    margin-left: 6px;
-    padding-left: 0;
+    margin-left: 10px;
+    padding-left: 10px;
   }
   .footer-columns {
     display: grid;

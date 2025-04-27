@@ -1,84 +1,180 @@
 
-.crypto-navbar {
-    color: white;
-    font-family: Arial, sans-serif;
+ .crypto-navbar {
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.crypto-top {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-bottom: 1px solid #222;
+  padding: 15px 10px;
+  margin: 0;
+  -webkit-overflow-scrolling: touch; 
+  scrollbar-width: thin;
+}
+
+.crypto-top::-webkit-scrollbar {
+  height: 4px;
+}
+
+.crypto-top::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.crypto-links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 8px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.crypto-links a:hover {
+  color: orange;
+}
+
+.crypto-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid gray;
+}
+
+.crypto-right {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.crypto-right p {
+  background-color: #1a1c20;
+  color: white;
+  border-radius: 5px;
+  padding: 6px 12px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.crypto-left {
+  display: flex;
+  align-items: center;
+}
+
+.crypto-left p {
+  color: rgb(157, 161, 167);
+  padding: 6px 12px;
+  margin-right: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.crypto-left .active {
+  background-color: rgb(17, 15, 15);
+  border-radius: 5px;
+  color: white;
+}
+
+.top-active {
+  display: flex;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(26, 28, 33);
+}
+
+.top {
+  background-color: rgba(30, 39, 79, 255);
+  margin-left: 15px;
+  border-radius: 10px;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .crypto-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   
+  .crypto-left {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 10px;
+    /* Visual indicator that content is scrollable */
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 95%, rgba(255,255,255,0.1) 100%);
+  }
+  
+   .crypto-left::-webkit-scrollbar {
+    height: 3px;
+  }
+  
+   .crypto-left::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+  
+  .crypto-right {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .crypto-right p {
+    margin-bottom: 8px;
+    padding: 10px;
   }
   
   .crypto-top {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    border-bottom: 1px solid #222;
-    padding: 20px 0;
-    margin: 10px ;
+    padding: 10px 5px;
   }
   
   .crypto-links a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 4px 8px;
-  }
-  
-  .crypto-links a:hover {
-    color: orange;
-  }
-  
-  .crypto-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px ;
-    padding: 10px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid gray;
-  }
-  
-  .crypto-right{
-    display: flex;
-  }
-  .crypto-right p {
-    background-color: #1a1c20;
-    color: white;
-border-radius: 5px;
-    padding: 6px 12px;
-    margin-right: 10px;
-    
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .crypto-left{
-    display: flex;
-    align-items: center;
-  }
-  
-  .crypto-left p {
-    color:rgb(157, 161, 167);;
-    padding: 6px 12px;
-    margin-right: 10px;
+    margin-right: 12px;
     font-size: 13px;
-    font-weight: bold;
-    cursor: pointer;
   }
   
-  .crypto-left .active {
-    background-color:rgb(17, 15, 15);
-    border-radius: 5px;
-    color: white;
+  .top {
+    margin-left: 8px;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  .crypto-right p, .crypto-left p {
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-right: 8px;
   }
   
- .top-active{
-    display: flex;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: rgb(26, 28, 33);
- }
- .top{
-    background-color: rgba(30,39,79,255);
-    margin-left: 15px;
-    border-radius: 10px;
- }
+  .crypto-top {
+    padding: 8px 5px;
+  }
+  
+  /* Add subtle scroll indicators */
+  .crypto-left::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 15px;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.1) 100%);
+    pointer-events: none;
+  }
+}
