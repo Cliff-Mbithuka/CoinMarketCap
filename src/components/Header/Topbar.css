@@ -38,4 +38,8 @@
     font-size: 12px;
     cursor: pointer;
   }
-  
+  @media (max-width: 768px) {
+    .topbar{
+      display: none;
+    }
+  }

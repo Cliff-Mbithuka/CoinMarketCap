@@ -36,8 +36,7 @@ const Pagination = ({
       if (startPage > 2) {
         pages.push('...');
       }
-      
-      // Add middle pages
+    
       for (let i = startPage; i <= endPage; i++) {
         pages.push(i);
       }

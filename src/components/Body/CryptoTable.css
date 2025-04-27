@@ -1,17 +1,43 @@
 
   .crypto-table-container {
-    background-color: #0a0e17;
+    background-color: #0d1520;
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     border-radius: 8px;
     width: 100%;
   }
   
-  .table-header {
+  /* Only allow horizontal scrolling on medium screens, not small screens */
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+    .crypto-table-container {
+      overflow-x: auto;
+    }
+  }
+  
+  /* Base styles for all screen sizes */
+  .table-header, .crypto-row {
     display: grid;
-    grid-template-columns: 180px 180px 150px 120px 170px 190px 190px 190px 200px 190px;
+    grid-template-columns: 
+      minmax(60px, 180px)
+      minmax(120px, 180px)
+      minmax(80px, 150px)
+      minmax(80px, 120px)
+      minmax(100px, 170px)
+      minmax(100px, 190px)
+      minmax(100px, 190px)
+      minmax(100px, 190px)
+      minmax(100px, 200px)
+      minmax(100px, 190px);
     padding: 16px 10px;
+    width: 100%;
+  }
+  
+  .table-header {
     border-bottom: 1px solid #222531;
+    position: sticky;
+    top: 0;
+    background-color: #0d1520;
+    z-index: 10;
   }
   
   .header-cell {
@@ -23,6 +49,9 @@
     align-items: center;
     justify-content: flex-end;
     padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .header-cell:first-child {
@@ -35,21 +64,19 @@
     padding-left: 10px;
     padding-right: 0;
   }
+  
   .header-cell:last-child {
     text-align: right;
-    
   }
   
   .info-icon {
     color: #a1a7bb;
     margin-left: 5px;
     font-size: 14px;
+    flex-shrink: 0;
   }
   
   .crypto-row {
-    display: grid;
-    grid-template-columns: 180px 180px 150px 120px 170px 190px 190px 190px 200px 300px;
-    padding: 16px 10px;
     border-bottom: 1px solid #151a29;
     align-items: center;
   }
@@ -87,7 +114,8 @@
     color: #4d4f5c;
     cursor: pointer;
     font-size: 16px;
-    margin-right: 4em;
+    margin-right: 1em;
+    flex-shrink: 0;
   }
   
   .crypto-logo {
@@ -134,8 +162,8 @@
   }
   
   .buy-button {
-    background-color:#0d1520;
-    color:#22256f;
+    background-color: #0d1520;
+    color: #22256f;
     border: 2px solid blue;
     border-radius: 8px;
     padding: 3px 6px;
@@ -144,6 +172,7 @@
     margin-left: 15px;
     cursor: pointer;
     flex-shrink: 0;
+    white-space: nowrap;
   }
   
   .positive-change {
@@ -180,6 +209,117 @@
   }
   
   .price-chart {
-    width: 150px;
+    width: 100%;
+    max-width: 150px;
     height: 50px;
+  }
+  
+  /* Medium screens - hide less important columns */
+  @media screen and (max-width: 1200px) {
+    .table-header, .crypto-row {
+      grid-template-columns: 
+        minmax(50px, 80px)
+        minmax(120px, 180px)
+        minmax(80px, 150px)
+        minmax(80px, 120px)
+        minmax(100px, 170px)
+        minmax(100px, 190px)
+        minmax(100px, 190px);
+    }
+    
+    /* Hide some columns on medium screens */
+    .header-cell:nth-child(n+8), 
+    .data-cell:nth-child(n+8) {
+      display: none;
+    }
+  }
+  
+  /* Small screens - mobile view */
+  @media screen and (max-width: 768px) {
+    .crypto-table-container {
+      overflow-x: hidden; /* Prevent horizontal scrolling on small screens */
+    }
+    
+    .table-header, .crypto-row {
+      grid-template-columns: 
+        minmax(40px, 50px)
+        minmax(130px, 1fr)
+        minmax(80px, 100px)
+        minmax(80px, 100px);
+      padding: 12px 8px;
+    }
+    
+    /* Hide all other columns */
+    .header-cell:nth-child(n+5), 
+    .data-cell:nth-child(n+5) {
+      display: none;
+    }
+    
+    /* Rename the "Name" column to "Market Cap" */
+    .header-cell:nth-child(2) .header-text::after {
+      content: "Market Cap";
+      display: inline;
+    }
+    
+    .header-cell:nth-child(2) .header-text {
+      font-size: 0;
+    }
+    
+    .header-cell, .data-cell {
+      font-size: 13px;
+    }
+    
+    .crypto-logo {
+      width: 24px;
+      height: 24px;
+      font-size: 14px;
+      margin-right: 6px;
+    }
+    
+    .crypto-name {
+      font-size: 14px;
+    }
+    
+    .crypto-symbol {
+      font-size: 12px;
+    }
+    
+    .buy-button {
+      padding: 2px 4px;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+    
+    /* Adjust star button for smaller screens */
+    .star-button {
+      margin-right: 0;
+      font-size: 14px;
+    }
+  }
+  
+  /* Extra small screens */
+  @media screen and (max-width: 480px) {
+    .table-header, .crypto-row {
+      grid-template-columns: 
+        minmax(30px, 40px)
+        minmax(110px, 1fr)
+        minmax(70px, 90px)
+        minmax(70px, 90px);
+      padding: 10px 6px;
+    }
+    
+    .crypto-logo {
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      margin-right: 4px;
+    }
+    
+    .crypto-name {
+      font-size: 13px;
+    }
+    
+    .crypto-symbol {
+      font-size: 11px;
+    }
   }
