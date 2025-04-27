@@ -113,7 +113,7 @@ const CryptoDashboard = () => {
         <h2>Today's Cryptocurrency Prices by Market Cap</h2>
         <p>
           The global crypto market cap is <b>$2.96T</b>, a{" "}
-          <span className="green">▼0.66%</span> increase over the last day. <u>Read
+          <span className="green">▲ 0.66%</span> increase over the last day. <u>Read
           More</u>
         </p>
       </div>

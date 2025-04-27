@@ -81,7 +81,7 @@
     font-size: 22px;
   }
   
-  /* ---------- Mobile styles ---------- */
+
   @media (max-width: 768px) {
     .navbar__menu-icon {
       display: block; 
