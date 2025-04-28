@@ -460,9 +460,9 @@ body {
   }
   .stats-container{
     display: flex;
-    gap: 4px;
+    /* gap: 4px;
     margin: 0;
-    padding: 0;
+    padding: 0; */
     
   }
   .crypto-dashboard{
@@ -478,6 +478,7 @@ body {
   }
   .stat-card{
     border-radius: 10px;
+    width: 350px;
   }
   .red-chart, .green-chart{
     display: none;
