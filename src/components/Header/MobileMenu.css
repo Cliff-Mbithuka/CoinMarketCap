@@ -47,7 +47,7 @@
     color: white;
   }
   
-  /* Action buttons */
+  
   .action-buttons {
     padding: 20px;
     display: flex;
@@ -77,7 +77,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  /* Settings section */
+  
   .settings-section {
     padding: 20px;
     display: flex;
@@ -149,7 +149,5 @@
       display: block;
     }
     
-    /* When using this component, modify the navbar.js to insert MobileMenu as follows:
-    {menuOpen && <MobileMenu />} 
-    */
+   
   }

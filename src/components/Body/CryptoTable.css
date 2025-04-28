@@ -7,14 +7,13 @@
     width: 100%;
   }
   
-  /* Only allow horizontal scrolling on medium screens, not small screens */
   @media screen and (min-width: 769px) and (max-width: 1200px) {
     .crypto-table-container {
       overflow-x: auto;
     }
   }
   
-  /* Base styles for all screen sizes */
+ 
   .table-header, .crypto-row {
     display: grid;
     grid-template-columns: 
