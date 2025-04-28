@@ -1,6 +1,10 @@
 
 import React from "react";
 import "./Footer.css";
+import logoImage from "../assets/images/logoimage.png";
+import Apple from "../assets/images/apple.png"
+import Google from "../assets/images/google.png"
+import Scan from "../assets/images/scan.png"
 // import appStore from './assets/app-store.png';
 // import googlePlay from './assets/google-play.png';
 // import qrCode from './assets/qr-code.png';
@@ -12,7 +16,7 @@ const Footer = () => {
         <div className="footer-top">
           <div className="footer-logo">
             <div className="profile">
-              <img src="/logo192.png" alt="CoinMarketCap" />
+              <img src={logoImage} alt="CoinMarketCap" />
               <span>CoinMarketCap</span>
             </div>
             <div className="currency">
@@ -155,13 +159,13 @@ const Footer = () => {
           </div>
           <div className="app-downloads">
             <a href="/" className="app-link">
-              <img src="/logo192.png" alt="App Store" />
+              <img src={Apple} alt="App Store" />
             </a>
             <a href="/" className="app-link">
-              <img src="/logo192.png" alt="Google Play" />
+              <img src={Google} alt="Google Play" />
             </a>
             <a href="/" className="app-link">
-              <img src="/logo192.png" alt="QR Code" />
+              <img src={Scan} alt="QR Code" />
             </a>
           </div>
         </div>

@@ -1,176 +1,93 @@
-import React, { useState } from "react";
-import "./MobileMenu.css";
+// NavigationMenu.jsx
+import React, { useState } from 'react';
+import './MobileMenu.css';
+import { ChevronDown, DollarSign } from 'lucide-react';
 
-const MobileMenu = () => {
-  const [expandedSection, setExpandedSection] = useState(null);
-  const [theme, setTheme] = useState("system");
+const NavigationMenu = () => {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [themeMode, setThemeMode] = useState('system');
 
-  const toggleSection = (section) => {
-    if (expandedSection === section) {
-      setExpandedSection(null);
-    } else {
-      setExpandedSection(section);
-    }
+  const toggleDropdown = (dropdown) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
+
+  const handleThemeChange = (theme) => {
+    setThemeMode(theme);
   };
 
   return (
-    <div className="mobile-menu">
-      {/* Menu sections with dropdowns */}
-      <div className="menu-section">
-        <div 
-          className="section-header" 
-          onClick={() => toggleSection("cryptocurrencies")}
-        >
-          <span>Cryptocurrencies</span>
-          <span className={`dropdown-arrow ${expandedSection === "cryptocurrencies" ? "expanded" : ""}`}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </span>
-        </div>
-        {expandedSection === "cryptocurrencies" && (
-          <div className="dropdown-content">
-            {/* Content for cryptocurrencies */}
-            <a href="#">Ranking</a>
-            <a href="#">Recently Added</a>
-            <a href="#">Categories</a>
-            <a href="#">Spotlight</a>
+    <div className="mobile-navigation">
+      <div className="navigation-content">
+        <div className="nav-sections">
+          <div className="nav-item" onClick={() => toggleDropdown('cryptocurrencies')}>
+            <span>Cryptocurrencies</span>
+            <ChevronDown className={activeDropdown === 'cryptocurrencies' ? 'rotated' : ''} />
           </div>
-        )}
-      </div>
-
-      <div className="menu-section">
-        <div 
-          className="section-header" 
-          onClick={() => toggleSection("dexscan")}
-        >
-          <span>DexScan</span>
-          <span className={`dropdown-arrow ${expandedSection === "dexscan" ? "expanded" : ""}`}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </span>
-        </div>
-        {expandedSection === "dexscan" && (
-          <div className="dropdown-content">
-            {/* Content for DexScan */}
-            <a href="#">Pairs</a>
-            <a href="#">Tokens</a>
-            <a href="#">DEXes</a>
+          
+          <div className="nav-item" onClick={() => toggleDropdown('dexscan')}>
+            <span>DexScan</span>
+            <ChevronDown className={activeDropdown === 'dexscan' ? 'rotated' : ''} />
           </div>
-        )}
-      </div>
-
-      <div className="menu-section">
-        <div 
-          className="section-header" 
-          onClick={() => toggleSection("exchanges")}
-        >
-          <span>Exchanges</span>
-          <span className={`dropdown-arrow ${expandedSection === "exchanges" ? "expanded" : ""}`}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </span>
-        </div>
-        {expandedSection === "exchanges" && (
-          <div className="dropdown-content">
-            {/* Content for Exchanges */}
-            <a href="#">Spot</a>
-            <a href="#">Derivatives</a>
-            <a href="#">DEX</a>
+          
+          <div className="nav-item" onClick={() => toggleDropdown('exchanges')}>
+            <span>Exchanges</span>
+            <ChevronDown className={activeDropdown === 'exchanges' ? 'rotated' : ''} />
           </div>
-        )}
-      </div>
-
-      <div className="menu-section">
-        <div 
-          className="section-header" 
-          onClick={() => toggleSection("community")}
-        >
-          <span>Community</span>
-          <span className={`dropdown-arrow ${expandedSection === "community" ? "expanded" : ""}`}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </span>
-        </div>
-        {expandedSection === "community" && (
-          <div className="dropdown-content">
-            {/* Content for Community */}
-            <a href="#">Articles</a>
-            <a href="#">Reports</a>
-            <a href="#">Events</a>
+          
+          <div className="nav-item" onClick={() => toggleDropdown('community')}>
+            <span>Community</span>
+            <ChevronDown className={activeDropdown === 'community' ? 'rotated' : ''} />
           </div>
-        )}
-      </div>
-
-      <div className="menu-section">
-        <div 
-          className="section-header" 
-          onClick={() => toggleSection("products")}
-        >
-          <span>Products</span>
-          <span className={`dropdown-arrow ${expandedSection === "products" ? "expanded" : ""}`}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </span>
-        </div>
-        {expandedSection === "products" && (
-          <div className="dropdown-content">
-            {/* Content for Products */}
-            <a href="#">Convert</a>
-            <a href="#">API</a>
-            <a href="#">Price Alerts</a>
+          
+          <div className="nav-item" onClick={() => toggleDropdown('products')}>
+            <span>Products</span>
+            <ChevronDown className={activeDropdown === 'products' ? 'rotated' : ''} />
           </div>
-        )}
-      </div>
-
-      {/* Action buttons */}
-      <div className="action-buttons">
-        <button className="create-account-btn">Create an account</button>
-        <button className="login-btn">Log in</button>
-      </div>
-
-      {/* Settings section */}
-      <div className="settings-section">
-        <div className="language-selector">
-          <button>
-            English <span className="dropdown-icon">▼</span>
-          </button>
         </div>
         
-        <div className="currency-selector">
-          <button>
-            <span className="currency-symbol">$</span> USD <span className="dropdown-icon">▼</span>
+        <div className="auth-buttons">
+          <button className="btn btn-primary">Create an account</button>
+          <button className="btn btn-secondary">Log in</button>
+        </div>
+        
+        <div className="preference-controls">
+          <div className="language-selector">
+            <span>English</span>
+            <ChevronDown />
+          </div>
+          
+          <div className="currency-selector">
+            <DollarSign size={18} />
+            <span>USD</span>
+            <ChevronDown />
+          </div>
+        </div>
+        
+        <div className="theme-selector">
+          <button 
+            className={`theme-btn ${themeMode === 'light' ? 'active' : ''}`}
+            onClick={() => handleThemeChange('light')}
+          >
+            Light
+          </button>
+          
+          <button 
+            className={`theme-btn ${themeMode === 'dark' ? 'active' : ''}`}
+            onClick={() => handleThemeChange('dark')}
+          >
+            Dark
+          </button>
+          
+          <button 
+            className={`theme-btn ${themeMode === 'system' ? 'active' : ''}`}
+            onClick={() => handleThemeChange('system')}
+          >
+            System
           </button>
         </div>
-      </div>
-
-      {/* Theme selector */}
-      <div className="theme-selector">
-        <button 
-          className={theme === "light" ? "active" : ""}
-          onClick={() => setTheme("light")}
-        >
-          Light
-        </button>
-        <button 
-          className={theme === "dark" ? "active" : ""}
-          onClick={() => setTheme("dark")}
-        >
-          Dark
-        </button>
-        <button 
-          className={theme === "system" ? "active" : ""}
-          onClick={() => setTheme("system")}
-        >
-          System
-        </button>
       </div>
     </div>
   );
 };
 
-export default MobileMenu;
+export default NavigationMenu;
